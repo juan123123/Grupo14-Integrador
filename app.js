@@ -1,41 +1,34 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const express = require('express')
+const path = require('path')
+const app = express()
+const port = process.env.PORT || 4000
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+app.get('/', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './views/index.html'))
+})
 
-var app = express();
+app.get('/menu', (req,res)=>{
+  res.sendFile(path.resolve(__dirname,"./views/menu.html"))
+})
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+app.get('/detail-product', (req,res)=>{
+  res.sendFile(path.resolve(__dirname,"./views/detail-product.html"))
+})
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.get('/shopping-cart', (req,res)=>{
+  res.sendFile(path.resolve(__dirname,"./views/shopping-cart.html"))
+})
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.get('/login', (req,res)=>{
+  res.sendFile(path.resolve(__dirname,"./views/login.html"))
+})
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
+app.get('/register', (req,res)=>{
+  res.sendFile(path.resolve(__dirname,"./views/register.html"))
+})
 
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+app.use(express.static(path.resolve(__dirname, './public')))
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
-
-module.exports = app;
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`)
+})
