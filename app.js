@@ -1,34 +1,22 @@
-const express = require('express')
-const path = require('path')
-const app = express()
-const port = process.env.PORT || 4000
+const express = require("express");
+const app = express();
+const path = require("path");
+const port = process.env.PORT || 3000;
+const methodOverride = require('method-override')
 
-app.get('/', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './views/index.html'))
-})
+app.use(express.static(path.resolve(__dirname, "public")));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json())
+app.use(methodOverride('_method'))
 
-app.get('/menu', (req,res)=>{
-  res.sendFile(path.resolve(__dirname,"./views/menu.html"))
-})
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'src/views'))
 
-app.get('/detail-product', (req,res)=>{
-  res.sendFile(path.resolve(__dirname,"./views/detail-product.html"))
-})
+const mainRouter = require('./src/routes/main');
+const productsRouter = require('./src/routes/products')
 
-app.get('/shopping-cart', (req,res)=>{
-  res.sendFile(path.resolve(__dirname,"./views/shopping-cart.html"))
-})
+app.use('/', mainRouter)
+app.use('/products', productsRouter)
 
-app.get('/login', (req,res)=>{
-  res.sendFile(path.resolve(__dirname,"./views/login.html"))
-})
 
-app.get('/register', (req,res)=>{
-  res.sendFile(path.resolve(__dirname,"./views/register.html"))
-})
-
-app.use(express.static(path.resolve(__dirname, './public')))
-
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`)
-})
+app.listen(port, () => console.log("server running on port " + port));

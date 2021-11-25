@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs')  %> 
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/styles-cart.css">
+    <link rel="stylesheet" href="/css/header-footer.css" />
+    <title>Shopping cart</title>
+</head>
+<body>
+    <header><%- include('./partials/header')%></header>
+    <main class="m-cart">
+        <section class="container-ext">
+            <section class="container-int">
+                <article>
+                    <img src="./img/1.jpg" alt="food1">
+                    <div>
+                        <ul>
+                            <li class="description">Crispi french fries</li>
+                            <li class="price">$50.000 COP</li>
+                            <li class="cantity"><input type="number" id="quantity" name="quantity" min="1" max="5"></li>
+                            <li class="subtotal">SubTotal: $50.000 COP</li>
+                        </ul>
+                    </div>
+                    <i class="fas fa-trash-alt"></i>
+                </article>
+                <article>
+                    <img src="./img/2.jpg" alt="food2">
+                    <div>
+                        <ul>
+                            <li class="description">Super hot dog</li>
+                            <li class="price">$50.000 COP</li>
+                            <li class="cantity"><input type="number" name="quantity" min="1" max="5"></li>
+                            <li class="subtotal">SubTotal: $50.000 COP</li>
+                        </ul>
+                    </div>
+                    <i class="fas fa-trash-alt"></i>
+                </article>
+                <article>
+                    <img src="./img/3.jpg" alt="food2">
+                    <div>
+                        <ul>
+                            <li class="description">Mojito coctel</li>
+                            <li class="price">$50.000 COP</li>
+                            <li class="cantity"><input type="number"  name="quantity" min="1" max="5"></li>
+                            <li class="subtotal">SubTotal: $50.000 COP</li>
+                        </ul>
+                    </div>
+                    <i class="fas fa-trash-alt"></i>
+                </article>
+                
+            </section> 
+        </section>
+        <div class="out-cart">
+            <button><i class="fas fa-caret-left"></i> Buy</button>
+            <p id="subtotal">Total: $150.000 COP</p>
+            <button>Pay <i class="fas fa-caret-right"></i></button>
+        </div>
+    </main>
+    <footer class="f-home">
+    <%- include('./partials/footer.ejs') %>
+    </footer>
+</body>
+</html>
