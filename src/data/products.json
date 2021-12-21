@@ -9,6 +9,15 @@
         "image": "hot-dog.jpg"
     },
     {
+        "id": 3,
+        "name": "sandwich 1",
+        "price": 13751,
+        "productTime": 9,
+        "category": "9EhJ0xqk",
+        "description": "curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus",
+        "image": "sandwich.jpg"
+    },
+    {
         "id": 4,
         "name": "Hamburguer 1",
         "price": 51747,
@@ -25,6 +34,15 @@
         "category": "66VoxQDvy",
         "description": "nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy",
         "image": "hot-dog.jpg"
+    },
+    {
+        "id": 6,
+        "name": "chicken 1",
+        "price": 13352,
+        "productTime": 80,
+        "category": "tsnddxxWTF",
+        "description": "varius ut blandit non interdum in ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae duis faucibus accumsan odio curabitur convallis duis",
+        "image": "chicken.jpg"
     },
     {
         "id": 7,
@@ -73,11 +91,11 @@
     },
     {
         "id": 12,
-        "name": "",
-        "price": "",
+        "name": "sandwich 2",
+        "price": 42267,
         "productTime": 5,
-        "category": "hamburguer",
-        "description": "lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat  ",
+        "category": "CpCn3RZzn",
+        "description": "lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat ",
         "image": "sandwich.jpg"
     },
     {

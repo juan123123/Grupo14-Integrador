@@ -4,17 +4,23 @@
     <%- include('./partials/head.ejs')  %> 
     <title>edit Product</title>
     <link rel="stylesheet" href="/css/normalize.css" />
+    
     <link rel="stylesheet" href="/css/form-product.css" />
     <link rel="stylesheet" href="/css/header-footer.css" />
   
   </head>
   <body>
     <div class="edit-product-box">
-      <header> <%- include('./partials/header.ejs') %></header>
+      <header>
+        
+       <%- include('./partials/header') %>
+       
+
+      </header>
       <% if (locals.product) { %>
       <main>
         <div class="selector-edit" >
-          <h2 class="products-title">Estás editando: <i><%= product.name %></i></h2>
+          <h2 class="products-title">Estás editando: <p style="display: inline;"><%= product.name %></p></h2>
         </div>
         <section>
 
@@ -23,7 +29,7 @@
 
             <div class="edit-form-element">
               <label for="product-name">Product Name</label>
-              <input type="text" name="name" placeholder="Ej:Hamburguesa"/>
+              <input type="text" name="name" placeholder="Ej : Hamburguesa" value="<%= product.name  %>"/>
             </div>
 
             <div class="edit-form-element">
@@ -49,12 +55,12 @@
 
             <div class="edit-form-element">
               <label for="product-price">Price</label>
-              <input id="product-price" name="price" type="number"/>
+              <input id="product-price" name="price" type="number" value="<%= product.price  %>"/>
             </div>
 
             <div class="edit-form-element">
               <label for="product-delay">Product Delay Time</label>
-              <input id="product-delay" name="productTime" type="text"/>
+              <input id="product-delay" name="productTime" type="text" value="<%= product.productTime %>"/>
             </div>
 
             <button type="submit">Update</button>

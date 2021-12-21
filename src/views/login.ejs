@@ -11,31 +11,40 @@
 </head>
 <body>
     <main>
-        <form action="/" class="iniciosesion" method="GET">
+        <form action="/users/login" class="iniciosesion" method="POST">
         <div class="login">
             <h1 class="title">Login</h1>
             <h3 class="subtitle">Sign in to your account</h3>
             <div class="username">
-                <input type="text" placeholder="Username" required >
+                <input type="text" name="email" placeholder="Email">
+                <% if (locals.errors && errors.email) { %>
+                  <div class="text-danger">
+                    <%= errors.email.msg %>
+                  </div>
+                <%} %>
             </div>
             <div class="password">
-                <input type="password" minlength="5" name="password" placeholder="Password">
+                <input type="password" name="password" minlength="5" placeholder="Password">
+                <% if (locals.errors && errors.password) { %>
+                    <div class="text-danger">
+                      <%= errors.password.msg %>
+                    </div>
+                  <%} %>
                 <p><label for="password"> Do you forget your password? <a href="register">Click here</a></label></p>
             </div>
             <div class="remember">
                 <label for="rememberme">Remember me</label>
-                <input type="checkbox" name="rememberme" id ="rememberme" value="rememberme">
+                <input type="checkbox" name="remember" id ="rememberme" value="rememberme">
             </div>
             <div class="botonlogin">
                 <a href="/"><button type="submit">Login</button></a>
                 <p>if you don't have an account, <a href="register">Register now</a></p>
             </div>
-            <div class="backhome">
-                <a href="/"><i class="fas fa-home"></i></a>
-            </div>
-            <p class="or">Or</p>
             <div class="continuarg">
                 <button type="button">Continue with Google <i class="fab fa-google"></i></button>
+            </div>
+            <div class="backhome">
+                <a href="/"><i class="fas fa-caret-left"></i></a>
             </div>
         </div>
     </form>

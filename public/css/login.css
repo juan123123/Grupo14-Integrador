@@ -34,29 +34,34 @@ main .login{
     max-width: 600px;
     border-radius: 5px;
     box-shadow: 6px 9px 15px -3px rgba(0,0,0,0.75);
-    background-color: #FFFFFF
+    background-color: #FFFFFF;
+    padding: 20px 40px;
+    position: relative
 }
 main .title {
-    margin-top: 40px;
+    margin-top: 30px;
 }
 main .subtitle {
     margin: 10px 0;
     
 }
-main .username input {
-    width: 70%;
+main .username  {
+    margin-bottom: 20px;
+    
+}
+main .username input, .password input, .botonlogin button, .continuarg button{
+    width: 100%;
     height: 30px;
     border-radius: 8px;
-    margin-top:15px ;
-    margin-bottom: 20px;
     text-align: center;
+    padding: 2px
+}
+main .username input {
+    margin-top:15px ;
+    
 }
 main .password input {
-    width: 70%;
-    height: 30px;
-    border-radius: 8px;
     margin-bottom: 0;
-    text-align: center;
 }
 main .password p {
     font-size: 1.2rem;
@@ -64,12 +69,9 @@ main .password p {
 }
 main .remember {
     margin-bottom: 10px;
-    
+    font-size: 15px
 }
 main .botonlogin button{
-    width: 70%;
-    height: 30px;
-    border-radius: 8px;
     background-color:  #5E1EBE ;
     margin-bottom: 0;
     cursor: pointer;
@@ -87,29 +89,34 @@ main .backhome {
     margin-top: 5px;
 }
 main .backhome i{
+    position: absolute;
+    top: 10px;
+    left: 10px;
     text-decoration: none;
     font-size: 1.8rem;
     color: black;
 }
-main .or{
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-}
+
 
 main .continuarg button {
-    width: 70%;
-    height: 35px;
     margin-bottom: 10px;
-    border-radius: 8px;
     font-size: 1.3rem;
     cursor: pointer;
     background-color: cornsilk;
     transition: all 500ms;
 }
 main .continuarg i{
+    position: absolute;
+    margin-bottom: 0;
     font-size: 1.5rem;
     
 }
 main .continuarg button:hover {
     background-color: #9150f1;
 }
+
+/*Errors*/
+main .text-danger{
+    font-size : 11px;
+    color: rgb(199, 2, 2);
+  }

@@ -56,7 +56,7 @@ header .nav-bar {
 header .nav-cell {
   position: relative;
 }
-header .list, .list1{
+header .list, .list1, .list2{
   display: block;
   position: absolute;
   background: white;
@@ -68,18 +68,25 @@ header .list {
   transition: all 0.3s;
 }
 header .list1 {
-  right: 30px;
-  width:200px;
+  right: 9%;
+  width:170px;
   top: -100%;
 }
-header .list li a,.list1 li a {
+
+header .list2 {
+  right: 0px;
+  width:100px;
+  top: -100%;
+}
+header .list li a, .list1 li a, .list2 li a {
+  font-size: 15px;
   color: black;
   display: inline-block;
   width: 100%;
   border-bottom: 1px solid;
-  padding: 5px 20px;
+  padding: 3px 15px;
 }
-header .list1 li a{
+header .list1 li a, header .list2 li a{
   margin:0px;
 }
 
@@ -93,7 +100,7 @@ header .burger-menu {
   left: 0;
   transition: all 0.3s;
 }
-header .burger-admin {
+header .burger-admin, .burger-user {
   cursor: pointer;
 }
 #btn-admin {
@@ -102,6 +109,14 @@ header .burger-admin {
 #btn-admin:checked ~ .list1 {
   top: 65px;
 }
+#btn-user {
+  display: none;
+}
+#btn-user:checked ~ .list2 {
+  top: 65px;
+}
+
+
 
 
 header .search {
@@ -143,47 +158,6 @@ header .fa-shopping-cart,
   z-index: -1;
 }
 
-/*----------POPUP*------------*/
-main .general-container{
-  width: 60%;
-  height: 350px;
-  position: fixed;
-  top:20%;
-  left: 20%;
-  background:rgba(0, 0, 0, 0.6);
-  padding: 30px 40px;
-
-}
-main .pop-up{
-  width:100%;
-  height:100%;
-  margin:auto;
-  background-color:white;
-  border-radius: 20px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-
-main .btns-popup button{
-  width: 200px;
-  padding: 20px;
-  border-radius: 30px;
-  font-size: 20px;
-  margin: 10px;
-  background-color: transparent;
-  align-self: center;
-}
-#edit-btn{
-  border: 2px solid red;
-  color: red;
-}
-#create-btn{
-  border: 2px solid #21b16c;;
-  color:#21b16c;;
-}
-
-/*----------POPUP*------------*/
 
 
 footer{
@@ -199,10 +173,14 @@ footer{
   bottom:0px;
 }
 .f-cart{
-  position: fixed;
+  position: absolute;
   bottom:0px;
 }
 .f-edit{
+  position: relative;
+  bottom:0px;
+}
+.f-profile{
   position: relative;
   bottom:0px;
 }
@@ -274,5 +252,8 @@ footer div .footer-left i{
     display: flex;
     flex-direction: column;
     margin: 0 15px;
+  }
+  header .list1 {
+    right: 11%;
   }
 }
