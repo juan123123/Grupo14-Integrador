@@ -1,7 +1,8 @@
+require('dotenv').config()
 const express = require("express")
 const session = require('express-session')
 const path = require("path")
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 5700
 const methodOverride = require('method-override')
 const cookies = require('cookie-parser')
 const userLoggedMiddleware = require('./src/middlewares/userLoggedMiddleware')
@@ -23,8 +24,8 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'src/views'))
 
 const mainRouter = require('./src/routes/main');
-const productsRouter = require('./src/routes/products')
-const usersRouter = require('./src/routes/users')
+const productsRouter = require('./src/routes/productsRoutes')
+const usersRouter = require('./src/routes/usersRoutes')
 
 app.use('/', mainRouter)
 app.use('/products', productsRouter)

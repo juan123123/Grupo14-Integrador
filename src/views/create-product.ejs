@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create Product</title>
     <link rel="stylesheet" href="/css/form-product.css" />
-    <link rel="stylesheet" href="/css/header-footer.css" />
     <link rel="stylesheet" href="/css/normalize.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -36,25 +35,25 @@
 
             <div class="edit-form-element">
               <label for="product-category">Category</label>
-              <select id='product-category' name='category' required>
-                <option value="hamburguer">Hamburguer</option>
-                <option value="vegan">Vegan</option>
-                <option value="chinese">Chinese</option>
-                <option value="icecream">Ice Cream</option>
-                <option value="drinks">Drinks</option>
+              <select id="product-category" name="Categories_id">
+                <% allCategories.forEach( category => { %>
+                  <option value="<%= category.id %>">
+                    <%= category.name %> 
+                  </option>
+                <% }) %> 
               </select>
             </div>
-
+            <div class="price-time">
             <div class="edit-form-element">
               <label for="product-price">Price:</label>
-              <input id="product-price" type="number" name='price' required />
+              <input id="product-price" class="product-price" type="number" name='price' required />
             </div>
 
             <div class="edit-form-element">
               <label for="product-delay">Product Delay Time:</label>
-              <input id="product-delay" type="text" name='time' required />
+              <input id="product-delay" class="delay-time" type="text" name='producttime' required />
             </div>
-
+          </div>
             <button type="submit">Create</button>
           </form>
         </section>
