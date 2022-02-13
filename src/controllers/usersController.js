@@ -21,7 +21,7 @@ const controller = {
   processRegister: async(req,res)=>{
     const resultValidation = validationResult(req)
     
-    if(resultValidation.errors.length>0){
+    if(resultValidation.errors.length > 0){
       return res.render('register',{
         errors : resultValidation.mapped(),
         oldData : req.body
@@ -114,7 +114,6 @@ const controller = {
     try {
       if (req.body.newpassword === req.body.confirmpassword){
         
-        console.log("img", req.session.userLogged.userimage)
         let user = {
           fullname: req.body.fullname,
           email: req.body.email,
