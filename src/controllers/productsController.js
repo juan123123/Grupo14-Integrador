@@ -2,10 +2,9 @@ const maxId = require("../utils/maxId");
 const ProductModel = require("../models/modelProduct");
 const CategoryModel = require("../models/modelCategory");
 const { validationResult } = require('express-validator');
-const path = require('path')
-const acceptedExtensions = ['.jpg', '.png', '.PNG','.gif'];
+const path= require("path")
+const acceptedExtensions = [".jpg", ".png", ".PNG", "gif"]
 const controller = {
-  //Show all products
   
   list:  (req, res, next) => {
     const Products =  ProductModel.findAll();
@@ -24,11 +23,12 @@ const controller = {
       res.send(err)
     });
   },
+
   //Detail Product
   detail: (req, res, next) => {
-    const products = ProductModel.findAll();
+    const products = ProductModel.findAll()
     const Product = ProductModel.findById(req.params.id);
-    const Categories = CategoryModel.findAll();
+    const Categories = CategoryModel.findAll()
 
     Promise.all([Product, Categories, products])
       .then(([product, allCategories, products]) => {
@@ -96,9 +96,9 @@ const controller = {
           allCategories: allCategories,
         });
       })
-      .catch((err) => {
-        next(err);
-      });
+    .catch((err) => {
+      next(err);
+    })
   },
 
   //Update a product
@@ -113,7 +113,7 @@ const controller = {
           .then(([product, allCategories]) => {
             const errors = resultValidation.mapped();
             const  oldData = {
-                image: (req.file==undefined || errors.image.msg=="Only these extensions are allowed: .jpg, .png, .PNG, .gif") ? product.image:req.file.image,
+                image: (req.file==undefined || errors.image.msg=="Only these extensions are allowed: .jpg, .jpe  g, .png, .PNG, .gif") ? product.image:req.file.image,
                 ...req.body,
               }
               return res.render('edit-product.ejs',{
@@ -162,6 +162,7 @@ const controller = {
       res.send(err)
     }
   }
-};
+}
 
 module.exports = controller;
+
