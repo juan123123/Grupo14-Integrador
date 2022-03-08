@@ -40,9 +40,11 @@ const controller = {
     const countByCategory = ProductModel.countByCategory()
    
     countByCategory.then(counts =>{
-      counts.map(item =>{
-        const categoryData = categoriesArray.find(cat => cat.id === item.dataValues.Categories_id)
-        quantityCategory.push({ category: categoryData.name , quantity: item.dataValues.Count })
+      counts.map(async item =>{
+        const categoryData = await categoriesArray.find(cat => cat.id === item.dataValues.Categories_id)
+        //console.log(categoryData)
+        
+        await quantityCategory.push({ category: categoryData.name || '', quantity: item.dataValues.Count })
     })
     
     products.then(products => {
