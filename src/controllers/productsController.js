@@ -4,6 +4,8 @@ const CategoryModel = require("../models/modelCategory");
 const { validationResult } = require('express-validator');
 const path= require("path")
 const acceptedExtensions = [".jpg", ".png", ".PNG", "gif"]
+
+
 const controller = {
   
   list:  (req, res, next) => {
@@ -161,7 +163,7 @@ const controller = {
     }catch(err){
       res.send(err)
     }
-  }
+  },
 }
 
 module.exports = controller;

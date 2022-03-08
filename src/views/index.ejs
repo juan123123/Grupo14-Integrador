@@ -2,40 +2,95 @@
 <html lang="en">
   <head>
     <%- include('./partials/head.ejs')  %> 
+
+    <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="/css/normalize.css" />
     <link rel="stylesheet" href="/css/home.css" />
-    <title>Home</title>
-  </head>
-  <body>
-      <%- include('./partials/header')%>
-    <main class="m-home">
-      <section class="welcome-style">
-        <h1>¡Welcome to Food Place!</h1>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus
-          aut numquam officiis
-        </p>
-      </section>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
 
-      <section class="carousel-style">
-        <i class="fas fa-arrow-circle-left"></i>
-        <article>
-          <img id="img-1" src="./img/banner1.jpg" alt="banner1" />
-        </article>
-        <article>
-          <img id="img-2" src="./img/banner2.jpg" alt="banner2" />
-        </article>
-        <article>
-          <img id="img-3" src="./img/banner3.jpg" alt="banner3" />
-        </article>
-        <article>
-          <img id="img-4" src="./img/banner4.jpg" alt="banner4" />
-        </article>
-        <i class="fas fa-arrow-circle-right"></i>
+    <!-- Demo styles -->
+    <style>
+      html,
+      body{
+        background-image: url(../img/fast-food.jpg);
+        background-size: cover;
+        padding-top: 8px;
+      }
+      .welcome-style{
+        background-color: rgba(0, 0, 0, 0.116);
+        background-repeat:repeat-y;
+        background-size:100vw;
+        max-width:100%;
+        height: 48%;
+        padding:50px 20px 20px 20px ;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        bottom:0px
+      }
+      
+    </style>
+  </head>
+
+  <body>
+    <%- include('./partials/header')%>
+    <!-- Swiper -->
+
+      <section class="welcome-style">
+        <div class="container-title">
+          <p style="font-size: 3em; margin: 0px; font-weight: bold;">¡Welcome to Food Place!<span>&#160;</span></p>
+        </div>
+        
+        <p>
+          Hello! welcome to Foodplace, an online store where you can order food of all kinds, burgers, pizzas, Chinese and even vegetarian food. 
+        </p>
+      
       </section>
-    </main>
+      
+      <div class="container-swipper">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="img/banner1.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="img/banner2.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="img/banner3.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="img/banner4.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="img/banner1.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="img/banner2.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="img/banner3.jpg" alt="">
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-scrollbar"></div>
+        </div>
+      </div>
+  
     <footer class="f-home">
-    <%- include('./partials/footer.ejs') %> 
-  </footer>
-  </body>  
+      <%- include('./partials/footer.ejs') %> 
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script src="/js/index.js"></script>
+  </body>
 </html>

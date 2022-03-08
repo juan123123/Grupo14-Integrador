@@ -8,17 +8,35 @@
             const productName = document.querySelector(".productName")
             const productDescription = document.querySelector(".productDescription")
             const productImage = document.querySelector("#product-image")
-
+            const productPrice = document.querySelector(".product-price")
+            const productCategory = document.querySelector("#product-category")
+          
             let errors = []
 
             if (productName.value.length < 5 || productName.value == ""){
-                errors.push("productName")
-                
-                
+                errors.push("productName")  
             }
             if (productDescription.value.length < 20 ){
-                errors.push("productDescription")
-                
+                errors.push("productDescription")    
+            }
+            if (productCategory.value == "" ){
+              errors.push("productCategory")
+            }
+            if (productPrice.value == "" ){
+              errors.push("productPrice")
+            }
+            if (productDelay.value == "" ){
+              errors.push("productDelay")
+            }
+
+            if (productPrice.value == ""){
+              errors.push("productPrice")
+              
+            }
+
+            if (productCategory.value == ""){
+              errors.push("productCategory")
+              
             }
 
 
@@ -27,9 +45,6 @@
                 
               }
             
-            
-
-           
 
             if (errors.includes('productName')) {
                 document.querySelector("#productName span").innerText = "Please use a valid product name (min 5 characters)"
@@ -41,11 +56,39 @@
             }else {
                 document.querySelector("#productDes span").innerHTML = ""
               }
+
+              if (errors.includes("productPrice")){
+                document.querySelector("#productPri span").innerHTML = "Please add a price"
+            }else {
+                document.querySelector("#productPri span").innerHTML = ""
+              }
             
+              if (errors.includes("productCategory")){
+                document.querySelector("#productCate span").innerHTML = "Please choose a Category"
+            }else {
+                document.querySelector("#productCate span").innerHTML = ""
+              }
+
+
               if (errors.includes('productImage')) {
                 document.querySelector("#productIma span").innerHTML = "Please use a valid image (JPEG,JPG,GIF,PNG)"
               } else {
                 document.querySelector("#productIma span").innerHTML = ""
+              }
+              if (errors.includes('productCategory')) {
+                document.querySelector("#productCategory span").innerHTML = "Please choose a category"
+              } else {
+                document.querySelector("#productCategory span").innerHTML = ""
+              }
+              if (errors.includes('productPrice')) {
+                document.querySelector("#productPrice span").innerHTML = "Please enter a price"
+              } else {
+                document.querySelector("#productPrice span").innerHTML = ""
+              }
+              if (errors.includes('productDelay')) {
+                document.querySelector("#productDelay span").innerHTML = "Please enter a delay"
+              } else {
+                document.querySelector("#productDelay span").innerHTML = ""
               }
             
             if (errors.length > 0){

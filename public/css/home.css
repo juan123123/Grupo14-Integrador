@@ -4,7 +4,8 @@ body{
    background-size: cover;
    padding-top: 8px;
  }
-main .welcome-style{
+ .welcome-style{
+   
   background-color: rgba(0, 0, 0, 0.116);
    background-repeat:repeat-y;
    background-size:100vw;
@@ -16,43 +17,9 @@ main .welcome-style{
    flex-direction: column;
    justify-content: center;
 }
-main .carousel-style i{
-   display:none;
-   font-size: 40px;
-
-}
-main .welcome-style h1{
-   font-size: 35px;
-}
-main .welcome-style p{
-  max-width: 70%;
-  
-}
-main .carousel-style {
-   width: 100vw;
-   margin: 0;
-   background-color: #fdfdfd91 ;
-   display: flex;
-   align-items:center;
-   padding: 20px 0;
-   height: 40%;
-   overflow-x: hidden;
-   justify-content: space-evenly;
-   border-top : 4px solid  #ffffff8e ;
-}
 
 
-main .carousel-style article{
-   max-width: 170px;
-   min-width: 165px;
-   margin:0 20px;
-  
-}
-main .carousel-style img{
-   width: 100%;
-   align-self: center;
-   
-}
+
 
 
 
@@ -64,7 +31,7 @@ footer{
    background-color: #FFFFFF;
    padding: 10px 20px;
    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-    
+   color:black
  }
 .f-home{
    position: absolute;
@@ -101,16 +68,16 @@ footer{
  @media (min-width: 480px) {
    
 
-   main .container-int article div li{
+    .container-int article div li{
       margin:  10px 10px;
    }
-   main .container-int article img{
+    .container-int article img{
       max-width: 250px;
    }
-   main .container-int article div{
+    .container-int article div{
       margin: 0 20px
    }
-   main .container-int article .fa-trash-alt{
+    .container-int article .fa-trash-alt{
       margin: 0 20px;
       font-size: 25px
    }
@@ -167,14 +134,14 @@ footer{
       max-width: 50%;  
    }
 /*-------------------------------------------home-----------------------------------------*/
-   main .container-int article div{
+    .container-int article div{
       margin: 0;
    }   
-   main .container-int article div ul{
+    .container-int article div ul{
       display: flex;
       align-items:center;
    }
-   main .container-int  article ul li{
+    .container-int  article ul li{
       margin: 0 25px
    } 
 }
@@ -183,14 +150,76 @@ footer{
 
 @media (min-width: 1200px) {
 /*-------------------------------------------home-----------------------------------------*/
-   main .carousel-style i{
+    .carousel-style i{
       display:block;
       font-size: 40px;
    }
-   main .carousel-style{
+    .carousel-style{
       justify-content: space-between;
    }
 
 
 /*-------------------------------------------home-----------------------------------------*/  
 }
+.container-swipper{
+   width: 100%;
+   padding-bottom: 100px;
+   margin-top: 0px;
+ }
+ .swiper {
+   width: 100%;
+   background:#ffffff79;
+   border-top: 3px solid #ffffffe1;
+   border-bottom: 3px solid #ffffffe1;
+ }
+ .swiper-wrapper{
+   width: 100%;
+ }
+ .swiper-slide {
+  
+   position:relative;
+   width: 100%;
+   text-align: center;
+   font-size: 18px;
+   background:  rgba(238, 238, 238, 0);
+   display: flex;
+   -webkit-box-pack: center;
+   -ms-flex-pack: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+   -webkit-box-align: center;
+   -ms-flex-align: center;
+   padding: 30px;
+ }
+
+ @media screen and (max-width: 600px) {
+   .swiper-slide {
+      padding: 0
+   }
+ }
+
+ .swiper-slide img {
+   display: block;
+   width: 100%;
+   object-fit: cover;
+ }
+ .f-home {
+    position: fixed;
+    z-index: 3;
+    bottom: 0;
+ }
+ .f-home a{
+   color: white;
+ }
+ .f-home a li i{
+   color: black;
+ }
+
+ .p-title{
+    font-size: 3em;
+    margin: 0px; 
+    font-weight: bold;
+    position: relative;
+   
+ }
+ 
