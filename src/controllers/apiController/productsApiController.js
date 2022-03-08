@@ -22,9 +22,6 @@ function dataProduct (products, protocol, host){
 }
 
 const controller = {
-  
-
-  
   listApi: (req, res,next) => {
     let quantityCategory = [];
     let categoriesArray = [];
@@ -41,8 +38,9 @@ const controller = {
    
     countByCategory.then(counts =>{
       counts.map(async item =>{
-        const categoryData = await categoriesArray.find(cat => cat.id === item.dataValues.Categories_id)
+        const categoryData = await categoriesArray.find(cat => cat.id == item.dataValues.Categories_id)
         //console.log(categoryData)
+        console.log(item)
         
         await quantityCategory.push({ category: categoryData.name || '', quantity: item.dataValues.Count })
     })
@@ -50,7 +48,7 @@ const controller = {
     products.then(products => {
       return res.json({
         count: products.length,
-        countByCategory: quantityCategory,
+        countByCategory: quantityCategory || 0,
         products : dataProduct(products, req.protocol, req.headers.host),
       }) 
     })
